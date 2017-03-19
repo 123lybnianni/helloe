@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+  div{
+	  text-align:center;
+	  font-size:100px;
+	  color:yellow;
+	 
+	  }
+ body{
+	 background:black;
+	 }
+</style>
+<script>
+  function toDou(n){
+	  return n<10 ? '0'+n :''+n;
+  }
+ window.onload = function (){
+	var oDiv=document.getElementById('div1'); 
+	var oDate=new Date;
+	oDate.setFullYear(2018,1,16)
+	oDate.setHours(0,0,0,0)
+	   function show(){
+		   var now=new Date;
+		   var r=parseInt((oDate.getTime()-now.getTime())/1000);
+		   var d=parseInt(r/(24*60*60));
+		   r=r%(24*60*60);
+		   var h=parseInt(r/(60*60));
+		   r=r%(60*60);
+		   var m=parseInt(r/60);
+		   var s=r%60;
+		   oDiv.innerHTML='还有'+toDou(d)+'天'+toDou(h)+'小时'+toDou(m)+'分'+toDou(s)+'秒';
+	   }
+	 show();
+	 setInterval(show,1000);
+ };
+
+</script>
+</head>
+
+<body>
+<div>距离春节</div>
+<div id="div1"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
